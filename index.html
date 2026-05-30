@@ -152,22 +152,54 @@
         </div>
     
         <script>
+            async function fetchCoverArtFallback(artist, album) {
+                try {
+                    const query = `artist:${encodeURIComponent(artist)} release:${encodeURIComponent(album)}`;
+                    const mbRes = await fetch(
+                        `https://musicbrainz.org/ws/2/release/?query=${query}&fmt=json&limit=1`,
+                        { headers: { 'User-Agent': 'kiro-blog/1.0 (huy97877@gmail.com)' } }
+                    );
+                    const mbData = await mbRes.json();
+                    const releaseId = mbData.releases?.[0]?.id;
+                    if (!releaseId) return null;
+
+                    const artRes = await fetch(`https://coverartarchive.org/release/${releaseId}/front-250`);
+                    return artRes.ok ? artRes.url : null;
+                } catch {
+                    return null;
+                }
+            }
+
             async function fetchLastPlayedSong() {
                 const username = 'kiro1337';
                 const apiKey = 'cdbac79e391f80a6efe4c81ddf3f2498'; //"If you are seeing this line, then you have found my last.fm API key. Please do not make any unauthorized usage with it :("
                 const url = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json`;
-    
+
                 try {
                     const response = await fetch(url);
                     const data = await response.json();
                     const track = data.recenttracks.track[0];
-    
-                    // Update HTML
-                    document.getElementById('album-art').src = track.image[2]['#text'] || 'placeholder.svg';
+
+                    // Try Last.fm images largest→smallest, skip empty strings
+                    const lfmImg = [3, 2, 1, 0]
+                        .map(i => track.image[i]?.['#text'])
+                        .find(src => src && src.trim() !== '');
+
+                    const albumArt = document.getElementById('album-art');
+                    if (lfmImg) {
+                        albumArt.src = lfmImg;
+                    } else {
+                        // Fallback: MusicBrainz Cover Art Archive
+                        const mbImg = await fetchCoverArtFallback(
+                            track.artist['#text'],
+                            track.album['#text']
+                        );
+                        albumArt.src = mbImg || 'placeholder.svg';
+                    }
+
                     const songNameElement = document.getElementById('song-name').querySelector('a');
                     songNameElement.textContent = track.name || 'Unknown Song';
                     songNameElement.href = track.url || '#';
-    
                     document.getElementById('artist-name').textContent = track.artist['#text'] || 'Unknown Artist';
                     document.getElementById('album-name').textContent = track.album['#text'] || 'Unknown Album';
                 } catch (error) {
@@ -175,11 +207,8 @@
                     document.getElementById('song-name').textContent = 'Error fetching song data';
                 }
             }
-    
-            // Fetch song data on load
+
             fetchLastPlayedSong();
-    
-            // Optionally refresh every 60 seconds
             setInterval(fetchLastPlayedSong, 60000);
         </script>
     </section>
