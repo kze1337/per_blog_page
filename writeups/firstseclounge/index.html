@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="index, follow">
+        
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://me.huydevcloud/rss.xml">
+        
+        <title> | Giải CTF cho nữ ?</title>
+
+        <link rel="preload" href="https://me.huydevcloud/css/style.css" as="style">
+        <link rel="stylesheet" href="https://raw.githack.com/Speyll/suCSS/main/reset-min.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://raw.githack.com/Speyll/suCSS/main/suCSS-min.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://me.huydevcloud/css/style.css">
+        <link rel="stylesheet" href="https://me.huydev.cloud/css/custom.css">
+
+        <!-- Add favicon with appropriate sizes -->
+        <link rel="icon" href="https:&#x2F;&#x2F;me.huydev.cloud/favicon.ico">
+        
+    </head>
+    <body>
+        
+        
+        
+        
+        <nav id="nav-bar">
+            
+            <a href="&#x2F;" class="">
+                
+                &#x2F;home&#x2F;
+            </a>
+            
+            <a href="&#x2F;blog" class="">
+                
+                &#x2F;blog&#x2F;
+            </a>
+            
+            <a href="&#x2F;link" class="">
+                
+                &#x2F;link&#x2F;
+            </a>
+            
+            <a href="&#x2F;misc" class="">
+                
+                &#x2F;misc&#x2F;
+            </a>
+            
+            <a href="&#x2F;about" class="">
+                
+                &#x2F;about&#x2F;
+            </a>
+            
+
+            <div class="theme-toggle" id="theme-toggle" role="button" tabindex="0" aria-label="Toggle theme"
+                data-icon-base="https://me.huydev.cloud/icons.svg"
+                data-icon-dark="#darkMode"
+                data-icon-light="#lightMode"
+                data-sound-src="https://me.huy-ice.cloud/click.ogg">
+                <svg class="icon">
+                    <use id="theme-icon"></use>
+                </svg>
+            </div>
+        </nav>
+
+        <main>
+            
+<div class="card a-white">
+  <div class="card-content">
+    <div class="title">
+      Giải CTF cho nữ ?
+    </div>
+    <div class="des">
+      khó nói
+    </div>
+    <div class="date">
+      <strong>2025-08-18</strong>
+    </div>
+  </div>
+</div>
+
+<p>FIRST Challenge là giải CTF cho các bạn tài năng nữ trẻ của khu vực ASEAN. Theo lý thuyết thì mình không phải nữ, nhưng cảm ơn bạn @liminlimit.nt vì đã lấy cho mình đề của giải này, và từ đó mình đã có thử giải 2 trong tổng số 3 bài web của giải này, mặc dù vì lý do nào đó mà bài thứ 3 đã bị gỡ :v.</p>
+<h1 id="1-web-has-more-content">1. Web Has More Content</h1>
+<p>Ta có địa chỉ vào instance đầu tiên, khi truy cập ta sẽ thấy dòng "Nothing Here" xuất hiện. Vậy là mình thử <code>curl</code> vào địa chỉ instance này, và ngay lập tức ta thấy được 1 đoạn text được mã hoá base64 trong header của trang web này.
+<img src="https://me.huy-ice.cloud/writeups/firstseclounge/1.png" alt="" /></p>
+<p>Decode đoạn text này và ta có một chuỗi là "The Flag is b7391d193dc094362ed20dcf5f6e9a1e".
+<img src="https://me.huy-icecloud/writeups/firstseclounge/2.png" alt="" /></p>
+<h1 id="2-nice-colors">2. Nice Colors</h1>
+<p>Vào trong instance, ta có 1 đoạn text cipher được set với 1 cái màu background, có vẻ là random tuỳ thời điểm giải bài này. Bài này thực chất là một bài crypto, với một cái cipher XOR ta có ngay khi vào instance, và theo đề bài thì ta sẽ lấy hex code của màu background làm key.</p>
+<p><img src="https://me.huy-ice.cloud/writeups/firstseclounge/3.png" alt="" /></p>
+<p>Sử dụng cái script mình tạo từ chatgpt và mình lấy được flag từ cipher XOR.</p>
+<pre><code># Cipher text from the challenge
+cipher_hex = &quot;ENTER_CIPHER&quot; # &lt;-- the cipher hex
+
+# Background color from the webpage
+bg_color = &quot;HEX_COLOR&quot;   # &lt;-- the color hex
+
+# Convert color to key (blue channel)
+key = int(bg_color[-2:], 16)
+
+# Decode
+cipher_bytes = cipher_hex.split()
+decoded = [chr(int(cipher_bytes[i], 16) ^ key) for i in range(2, len(cipher_bytes), 3)]
+decoded_str = &quot;&quot;.join(decoded)
+
+print(&quot;Decoded:&quot;, decoded_str)
+
+</code></pre>
+
+
+        </main>
+
+        <footer>
+            
+
+    <section id="button">
+        <a href="https://www.youtube.com/watch?v=9mA7h1jfxc8"><img src="https://me.huy-ice.cloud/button/ngot.gif" style="display: inline-block;" width="88"></a>
+        <img src="https://me.huy-icecloud/button/cinnamonroll.gif" style="display: inline-block;" width="88">
+        <img src="https://me.huy-ice.cloud/button/insanity.gif" style="display: inline-block;" width="88">
+        <img src="https://me.huy-ice.cloud/button/miku.gif" style="display: inline-block;" width="88">
+        <a href="https://yachiyo.net/"><img src="https://me.huy-icecloud/button/yachiyo.gif" style="display: inline-block;" width="151.21951219512"></a>
+    </section>
+
+    <p id="changelog">&copy; 2026 kiro1337, <a href="https://gitlab.com/">open-sourced</a> under the <a href="https://opensource.org/license/mit">MIT License</a></p>
+    <p>Made using <a rel="noopener noreferrer" href="https://github.com/Speyll/anemone" target="_blank">anemone</a> Zola theme</p>
+  
+        </footer>
+
+        <!-- Move JS to end of body and add defer -->
+        <script src="https://me.huy-icecloud/js/script.js" defer></script>
+    </body>
+</html>
