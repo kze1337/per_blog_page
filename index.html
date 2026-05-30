@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="robots" content="index, follow">
         
-        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://me.huy-ice.cloud/rss.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://me.huy-ice.cloud/blog/atom.xml">
         
         <title>キロ's little site</title>
 
@@ -136,7 +136,7 @@
     
         <div id="now-playing">
             <div id="content">
-                <img id="album-art" src="placeholder.png" alt="Album Art">
+                <img id="album-art" src="placeholder.svg" alt="Album Art">
                 <div id="details">
                     <div id="song-name" class="info">
                         <a href="#" target="_blank">Song Name</a>
@@ -163,7 +163,7 @@
                     const track = data.recenttracks.track[0];
     
                     // Update HTML
-                    document.getElementById('album-art').src = track.image[2]['#text'] || 'placeholder.png';
+                    document.getElementById('album-art').src = track.image[2]['#text'] || 'placeholder.svg';
                     const songNameElement = document.getElementById('song-name').querySelector('a');
                     songNameElement.textContent = track.name || 'Unknown Song';
                     songNameElement.href = track.url || '#';
@@ -224,7 +224,7 @@
             </li>
             <li>
                 <p style="display: inline; margin: 0;">Blog's RSS:</p>
-                <a href="/blog/atome.xml" style="display: inline;">*maintaining...</a>
+                <a href="/blog/atom.xml" style="display: inline;">*maintaining...</a>
             </li>
                         <li>
                 <p style="display: inline; margin: 0;">Site update*</p>

@@ -1,0 +1,98 @@
+/* custom.css — light polish layer on top of anemone/suCSS.
+   Uses the theme's existing CSS variables so dark/light mode keep working. */
+
+/* ---- Readability: keep line length comfortable ---- */
+main {
+  max-width: 80ch;
+  margin-inline: auto;
+}
+
+.body-content {
+  line-height: 1.65;
+}
+
+/* ---- Headings: a touch more breathing room + accent rule ---- */
+.body-content h2 {
+  margin-top: 2rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid var(--accent);
+}
+
+.body-content h3 {
+  margin-top: 1.4rem;
+}
+
+#introduce h1 {
+  margin-bottom: 0.3rem;
+}
+
+/* ---- Section spacing on the home page ---- */
+main > section {
+  margin-bottom: 1.75rem;
+}
+
+/* ---- Site-map / contact lists: tidy inline rows ---- */
+#site-map ul,
+#contact ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#site-map li,
+#contact li {
+  margin-bottom: 0.55rem;
+}
+
+/* ---- About page card ---- */
+.card .title {
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.card .des {
+  opacity: 0.8;
+}
+
+/* ---- Webring buttons: align nicely and add a subtle hover ---- */
+#button {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+  justify-content: center;
+}
+
+#button img {
+  image-rendering: pixelated;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+#button img:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+/* ---- Now-playing widget: never overflow small screens ---- */
+#now-playing {
+  max-width: 100%;
+}
+
+#album-art {
+  object-fit: cover;
+}
+
+/* ---- Counter / quotes centering safety ---- */
+#counter img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---- Footer ---- */
+footer {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+#changelog {
+  opacity: 0.85;
+}

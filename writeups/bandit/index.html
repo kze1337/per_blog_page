@@ -5,9 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="robots" content="index, follow">
         
-        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://me.huy-ice.cloud/rss.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://me.huy-ice.cloud/blog/atom.xml">
     
-        <title> | Bandit wargame của OverTheWire</title>
+        <title>キロけず | Bandit wargame của OverTheWire</title>
 
         <link rel="preload" href="https://me.huy-ice.cloud/css/style.css" as="style">
         <link rel="stylesheet" href="https://raw.githack.com/Speyll/suCSS/main/reset-min.css" crossorigin="anonymous">
@@ -53,7 +53,7 @@
             
 
             <div class="theme-toggle" id="theme-toggle" role="button" tabindex="0" aria-label="Toggle theme"
-                data-icon-base="https://me.huy-icecloud/icons.svg"
+                data-icon-base="https://me.huy-ice.cloud/icons.svg"
                 data-icon-dark="#darkMode"
                 data-icon-light="#lightMode"
                 data-sound-src="https://me.huy-ice.cloud/click.ogg">
@@ -106,7 +106,7 @@
 <li>Gõ lên file cùng kí tự "" trước khi gõ dấu cách</li>
 <li>Nhập full tên file trong dấu ngoặc kép</li>
 </ul>
-<p><img src="https://me.huy-icecloud/writeups/bandit/lv2.png" alt="" /></p>
+<p><img src="https://me.huy-ice.cloud/writeups/bandit/lv2.png" alt="" /></p>
 <h1 id="level-3"><strong>Level 3</strong></h1>
 <p>Mật khẩu lần này chứa trong một thư mục "inhere". Ta "cd" vào thư mục và chạy lệnh "ls" để xuất các file có trong thư mục nhưng không có kết quả. Có vẻ đây là một <a rel="external" href="https://wiki.archlinux.org/title/Dotfiles">dotfiles</a>, với dấu chấm đầu tên file và bị ẩn mặc định. Ta sẽ chạy lại lệnh "ls" với flag -a để hiển thị cả dotfiles, và xuất hiện một file "...Hiding-From-You". Xuất dữ liệu bằng "cat ...Hiding_From_You":</p>
 <p><img src="https://me.huy-ice.cloud/writeups/bandit/lv3.png" alt="" /></p>
@@ -190,14 +190,14 @@ Khi cat file này, ta thấy có hàng nghìn kết quả khác nhau, với mộ
 <p><img src="https://me.huy-ice.cloud/writeups/bandit/lv17.png" alt="" /></p>
 <h1 id="level-18"><strong>Level 18</strong></h1>
 <p>Khi đăng nhập vào level này, ta sẽ có kết quả ""Byebye!" và ngay lập tức bị đạp ra khỏi SSH. Theo đề bài, password nằm ngay trong 1 file <strong>readme</strong>, trong folder home của level này. Ta có thể vớ nhanh file <strong>readme</strong> bằng cách thêm lệnh đọc file <strong>readme</strong> sau lệnh SSH.</p>
-<p><img src="https://me.huy-icecloud/writeups/bandit/lv18.png" alt="" /></p>
+<p><img src="https://me.huy-ice.cloud/writeups/bandit/lv18.png" alt="" /></p>
 <h1 id="level-19"><strong>Level 19</strong></h1>
 <p>Ta được cấp 1 file binary trong home directory. Kiểm tra bằng <strong>ls -la</strong>, ta có kết quả sau:</p>
 <p><img src="https://me.huy-ice.cloud/writeups/bandit/ls.png" alt="" /></p>
 <p>Ta thấy được rằng <strong>bandit19</strong> có thể thực thi file, nhưng owner file là bandit20. Khi thực thi thử file, ta có kết quả sau:
-<img src="https://me.huy-icecloud/writeups/bandit/bandit20.png" alt="" />
+<img src="https://me.huy-ice.cloud/writeups/bandit/bandit20.png" alt="" />
 Vậy có nghĩa là file này ta thực thi được tại level 19, nhưng nó sẽ chạy lệnh tiếp theo với quyền của bandit20. Lợi dụng điều này và ta sẽ dùng <strong>cat</strong> để lấy password của bandit20 tại <strong>/etc/bandit_pass</strong>:</p>
-<p><img src="https://me.huy-icecloud/writeups/bandit/lv19.png" alt="" /></p>
+<p><img src="https://me.huy-ice.cloud/writeups/bandit/lv19.png" alt="" /></p>
 <h1 id="level-20"><strong>Level 20</strong></h1>
 <p>Level này khá lằng nhằng, ta phải tự mở một port bất kỳ bằng <strong>netcat</strong>, sử dụng một file binary được cấp trong folder home tên lầ "suconnect" kèm port mà ta mở, rồi cấp password level. Khi đó tại <strong>netcat</strong> ta mở trước đó, sẽ xuất ra password cho level tiếp theo.</p>
 <p>Vì ta cần làm hai tác vụ một lúc, ta sẽ sử dụng <strong>tmux</strong> để hoạt động hai session cùng một lúc. Đây là giải pháp của mình:</p>
@@ -212,7 +212,7 @@ Vậy có nghĩa là file này ta thực thi được tại level 19, nhưng nó
 <p><img src="https://me.huy-ice.cloud/writeups/bandit/lv20.png" alt="" /></p>
 <h1 id="level-21"><strong>Level 21</strong></h1>
 <p>Một tác vụ được chạy liên tục tại <strong>/etc/cron.d/</strong>. Ta sẽ <code>cd</code> vào thực mục này và thấy 1 loạt script cronjob khác nhau. Vì level tiếp theo là 22, nên mình đã check file "cronjob_bandit22". Bên trong file chứa 1 lệnh được chạy liên tục theo perm của bandit22. <code>cat</code> thử file đấy và thấy rằng file password của bandit22 ở <strong>/etc/bandit_pass/bandit22</strong> được copy vào một file ở /tmp. <code>cat</code> file đó và ta thấy mật khẩu của level tiếp theo.
-<img src="https://me.huy-icecloud/writeups/bandit/lv21.png" alt="" /></p>
+<img src="https://me.huy-ice.cloud/writeups/bandit/lv21.png" alt="" /></p>
 <h1 id="level-22"><strong>Level 22</strong></h1>
 <p>Level này khá tương tự level trước, nên mình <code>cat</code> và chạy thử file "cronjob_bandit23".
 <img src="https://me.huy-ice.cloud/writeups/bandit/cat22.png" alt="" /></p>
@@ -221,7 +221,7 @@ Vậy có nghĩa là file này ta thực thi được tại level 19, nhưng nó
 <img src="https://me.huy-ice.cloud/writeups/bandit/lv22.png" alt="" /></p>
 <h1 id="level-23"><strong>Level 23</strong></h1>
 <p>Cũng là crobjob, mình <code>cat</code>, chạy thử các kiểu "cronjob_bandit24".
-<img src="https://me.huy-icecloud/writeups/bandit/cat23.png" alt="" /></p>
+<img src="https://me.huy-ice.cloud/writeups/bandit/cat23.png" alt="" /></p>
 <p>Để hiểu đơn giản, script này sẽ chạy và đồng thời xoá hết tất cả các script nằm trong <strong>/var/spool/bandit24/foo</strong>, do script này chạy trong user bandit24 cùng perm của bandit24 luôn. Và điều đặc biệt là trong script có lọc và chỉ chạy các script mà owner là bandit23.</p>
 <p>Cách xử lí bây giờ là tạo một script mà sẽ copy pass của level tiếp theo vào 1 file trong <strong>/tmp</strong>, sau đó đưa script đấy vào trong <strong>/var/spool/bandit24/foo</strong> và chờ nó được chạy tự động bởi user bandit24. Đây là list các bước làm:</p>
 <ul>
