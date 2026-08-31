@@ -6,13 +6,13 @@ index ea9da19..37bbf32 100644
          <meta name="viewport" content="width=device-width, initial-scale=1.0">
          <meta name="robots" content="index, follow">
          
--        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://me.huy-ice.cloud/rss.xml">
-+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://me.huy-ice.cloud/blog/atom.xml">
+-        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://kizunee.id.vn/rss.xml">
++        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://kizunee.id.vn/blog/atom.xml">
          
 -        <title></title>
 +        <title>404 Not Found | キロけず</title>
  
-         <link rel="preload" href="https://me.huy-ice.cloud/css/style.css" as="style">
+         <link rel="preload" href="https://kizunee.id.vn/css/style.css" as="style">
          <link rel="stylesheet" href="https://raw.githack.com/Speyll/suCSS/main/reset-min.css" crossorigin="anonymous">
 diff --git a/about/index.html b/about/index.html
 index b960875..f1bd990 100644
@@ -22,13 +22,13 @@ index b960875..f1bd990 100644
          <meta name="viewport" content="width=device-width, initial-scale=1.0">
          <meta name="robots" content="index, follow">
          
--        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://me.huy-ice.cloud/rss.xml">
-+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://me.huy-ice.cloud/blog/atom.xml">
+-        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://kizunee.id.vn/rss.xml">
++        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://kizunee.id.vn/blog/atom.xml">
          
 -        <title></title>
 +        <title>キロけず | About</title>
  
-         <link rel="preload" href="https://me.huy-ice.cloud/css/style.css" as="style">
+         <link rel="preload" href="https://kizunee.id.vn/css/style.css" as="style">
          <link rel="stylesheet" href="https://raw.githack.com/Speyll/suCSS/main/reset-min.css" crossorigin="anonymous">
 @@ -136,7 +136,7 @@ Contact me</li>
  </ul>
@@ -46,14 +46,14 @@ index 4f5543f..27f09d1 100644
 @@ -2,11 +2,11 @@
  <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
      <channel>
-         <title>K4ahr's blog posts</title>
+         <title>Kiro's blog posts</title>
 -        <link>https:&#x2F;&#x2F;huydev.cloud/blog/</link>
-+        <link>https:&#x2F;&#x2F;me.huy-ice.cloud/blog/</link>
++        <link>https:&#x2F;&#x2F;kizunee.id.vn/blog/</link>
          <description>Yapping about everything, in life, tech, resources or something else.</description>
          <generator>Zola</generator>
          <language>en</language>
 -        <atom:link href="https://huydev.cloud/blog/atom.xml" rel="self" type="application/rss+xml"/>
-+        <atom:link href="https://me.huy-ice.cloud/blog/atom.xml" rel="self" type="application/rss+xml"/>
++        <atom:link href="https://kizunee.id.vn/blog/atom.xml" rel="self" type="application/rss+xml"/>
          <lastBuildDate>Wed, 19 Mar 2025 00:00:00 +0000</lastBuildDate>
          
          <item>
@@ -64,39 +64,39 @@ index 4f5543f..27f09d1 100644
 -            <link>https://huydev.cloud/blog/linux/</link>
 -            <guid>https://huydev.cloud/blog/linux/</guid>
 -            <description xml:base="https://huydev.cloud/blog/linux/">
-+            <link>https://me.huy-ice.cloud/blog/linux/</link>
-+            <guid>https://me.huy-ice.cloud/blog/linux/</guid>
-+            <description xml:base="https://me.huy-ice.cloud/blog/linux/">
++            <link>https://kizunee.id.vn/blog/linux/</link>
++            <guid>https://kizunee.id.vn/blog/linux/</guid>
++            <description xml:base="https://kizunee.id.vn/blog/linux/">
                  
                      &lt;p&gt;Headlines has been crazed when Microsoft annouced the device requirements for Windows 11, right after Windows 10 end of support. This also caused the rise of medias and stuffs about making the switch to Linux. Like no joke, try to search the phrase &quot;switch to linux&quot; on YouTube, and you will see dozen, if not hundred of videos about making the switch from Windows to Linux.&lt;&#x2F;p&gt;
 -&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;huydev.cloud&#x2F;blog&#x2F;linux&#x2F;trend.png&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
-+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;me.huy-ice.cloud&#x2F;blog&#x2F;linux&#x2F;trend.png&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
++&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;kizunee.id.vn&#x2F;blog&#x2F;linux&#x2F;trend.png&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
  &lt;p&gt;For the most part, I do agree about the movement. Linux desktop has done a really good job in recent years, and it does fit the needs of most user bases, whether it&#x27;s gaming, office work, or programming, because for most of it, every piece of software nowadays has its own open-sourced alternative. Of course, talking about gaming, some games do not run natively and require being run through some tools like Proton, but honestly, gaming on Linux has been performed seamlessly. That also explained many gaming consoles, like the Steam Deck, which uses a build of Arch Linux and still becomes one of the best-selling consoles worldwide. Not to mention that Linux is a free operating system, as in both price and freedom, hence you can even compile your own Linux kernel and build stuff from scratch.&lt;&#x2F;p&gt;
  &lt;p&gt;And for this, I told one of my friends about switching to Linux when I heard about his abomination, an HP laptop, suffering from bad performance. So I installed EndeavourOS (fuck Ubuntu) for him, and a &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;stdrice&#x2F;pengurice&quot;&gt;rice made by stdrice&lt;&#x2F;a&gt;. He did have some confusion at first when using it, but after almost a month, he said it was fascinating. He can use it without any problems and also utilize the terminal fluently. He even preferred apps and software that use CLI instead of traditional GUI-based software, quoting, &quot;This shit looks clean as fuck.&quot; But after almost a year, I had to switch him back to Windows 10 LTSC due to a lack of proprietary software support that was required by his educational institution, poor gaming performance, and other problems related to troubleshooting and stuff. To be fair, he did really get into the Linux rabbit hole, learned to modify the pre-built config after his preference, and was even somewhat hesitant to switch back to Windows. The total amount of time he daily drove Linux was almost a year. Kudos to him for actually giving a shot at the beginning.&lt;&#x2F;p&gt;
 -&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;huydev.cloud&#x2F;blog&#x2F;linux&#x2F;image.png&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
-+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;me.huy-ice.cloud&#x2F;blog&#x2F;linux&#x2F;image.png&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
++&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;kizunee.id.vn&#x2F;blog&#x2F;linux&#x2F;image.png&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
  &lt;p&gt;It&#x27;s important to acknowledge that Linux might not be the perfect fit for everyone. There are certain scenarios where sticking with Windows or macOS could be more beneficial. For instance, if you rely heavily on specific software that is only available on Windows or macOS, switching to Linux might disrupt your workflow. It is explained for me why I can&#x27;t use Linux daily drive like old time before, due to the need of software for my work like Adobe suites and some unsupported game like Valorant, because of its kernel-level anti-cheat.&lt;&#x2F;p&gt;
  &lt;p&gt;And as for that, I have decided to stopped using Linux for daily drive after years, but rather treat it as an Operating System Labs for research, works and &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Capture_the_flag_(cybersecurity)&quot;&gt;CTFs plays&lt;&#x2F;a&gt;, which I mostly use through virtual machine or &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;learn.microsoft.com&#x2F;en-us&#x2F;windows&#x2F;wsl&#x2F;&quot;&gt;WSL&lt;&#x2F;a&gt;.
 -&lt;img src=&quot;https:&#x2F;&#x2F;huydev.cloud&#x2F;blog&#x2F;linux&#x2F;wsl.png&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
-+&lt;img src=&quot;https:&#x2F;&#x2F;me.huy-ice.cloud&#x2F;blog&#x2F;linux&#x2F;wsl.png&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
++&lt;img src=&quot;https:&#x2F;&#x2F;kizunee.id.vn&#x2F;blog&#x2F;linux&#x2F;wsl.png&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
  &lt;p&gt;I know it&#x27;s not just about the lightweight and stuff; it&#x27;s about freedom and privacy. But sometimes, you get what you paid for. I mean, at least if you are still concerned about privacy when using Windows, just install an LTSC version and use some GitHub tool like &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;privacy.sexy&#x2F;&quot;&gt;privacy.sexy&lt;&#x2F;a&gt; or &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ChrisTitusTech&#x2F;winutil&quot;&gt;WinUtil&lt;&#x2F;a&gt; to debloat and remove all the telemetry. But at the end of day, its all about you, so choose whatever fit you best, don&#x27;t force yourself to follow the movement if you&#x27;re not comfortable about using Linux.&lt;&#x2F;p&gt;
  
                  
 @@ -43,13 +43,13 @@
-                     K4ahr
+                     klro
                  
              </author>
 -            <link>https://huydev.cloud/blog/tablet/</link>
 -            <guid>https://huydev.cloud/blog/tablet/</guid>
 -            <description xml:base="https://huydev.cloud/blog/tablet/">
-+            <link>https://me.huy-ice.cloud/blog/tablet/</link>
-+            <guid>https://me.huy-ice.cloud/blog/tablet/</guid>
-+            <description xml:base="https://me.huy-ice.cloud/blog/tablet/">
++            <link>https://kizunee.id.vn/blog/tablet/</link>
++            <guid>https://kizunee.id.vn/blog/tablet/</guid>
++            <description xml:base="https://kizunee.id.vn/blog/tablet/">
                  
                      &lt;p&gt;I got this tablet (thanks C00kiez), which is an Samsung Galaxy Tab A8 8.0 (2019), model SM-T295. At the time I received the tablet, it was runing Android 11, the highest official firmware from Samsung, so the device was at the worst performance, with just 32GB storage and 2GB RAM.&lt;&#x2F;p&gt;
  &lt;p&gt;So the first thing to do was to install a &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;List_of_custom_Android_distributions&quot;&gt;custom ROM&lt;&#x2F;a&gt;, for a better software exprience. Now of course, this is not a well known tablet in the market. In fact, till now I almost can&#x27;t find any of stable built AOSP ROM for this tablet, so the second solution for this was to use an &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;developer.android.com&#x2F;topic&#x2F;generic-system-image&quot;&gt;GSI&lt;&#x2F;a&gt;. There are a lot of choice for &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;phhusson&#x2F;treble_experimentations&#x2F;wiki&#x2F;Generic-System-Image-%28GSI%29-list&quot;&gt;GSI build&lt;&#x2F;a&gt;, but before that, I was using a GSI build of SuperiorOS that was built by &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;stdrice.github.io&quot;&gt;stdrice&lt;&#x2F;a&gt; specifically for this SM-T295 model, and although the perfomance of the tablet on that built was really good, I switched to another GSI build called &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;xiaoleGun&#x2F;treble_build_miku&quot;&gt;Miku UI&lt;&#x2F;a&gt; that I built myself (don&#x27;t try this), just for the fun of it, beside that it does not have many major impact compare to the old build. The build also does not included GApps, that are required for Google Services.&lt;&#x2F;p&gt;
 -&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;huydev.cloud&#x2F;blog&#x2F;tablet&#x2F;2.jpg&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
-+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;me.huy-ice.cloud&#x2F;blog&#x2F;tablet&#x2F;2.jpg&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
++&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;kizunee.id.vn&#x2F;blog&#x2F;tablet&#x2F;2.jpg&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
  &lt;p&gt;And I think that is the hardest part for the process. The rest is the setup that I use for my tablet. MOST of my application that I use here are open-sourced:&lt;&#x2F;p&gt;
  &lt;ul&gt;
  &lt;li&gt;
