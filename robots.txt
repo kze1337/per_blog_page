@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 Allow: /
-Sitemap: https://me.huy-ice.cloud/sitemap.xml
+Sitemap: https://kizunee.id.vn/sitemap.xml
